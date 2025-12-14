@@ -14,7 +14,7 @@ export function Header({ isRunning, cycle, totalTime, onSettingsClick }: HeaderP
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         {isRunning && (
           <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>
-            Cycle {cycle} \u2022 {formatTime(totalTime)}
+            Cycle {cycle} • {formatTime(totalTime)}
           </div>
         )}
         <button

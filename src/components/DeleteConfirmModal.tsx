@@ -37,7 +37,7 @@ export function DeleteConfirmModal({
             fontSize: 24,
           }}
         >
-          {!canDelete ? "\u26a0\ufe0f" : "\ud83d\uddd1\ufe0f"}
+          {!canDelete ? "⚠️" : "🗑️"}
         </div>
         <h3
           style={{

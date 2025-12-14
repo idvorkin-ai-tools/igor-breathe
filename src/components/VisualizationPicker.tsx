@@ -34,7 +34,7 @@ export function VisualizationPicker({
               </div>
             </div>
             {currentVisualization === viz.id && (
-              <span style={{ color: "#7dd3c0" }}>\u2713</span>
+              <span style={{ color: "#7dd3c0" }}>✓</span>
             )}
           </button>
         ))}

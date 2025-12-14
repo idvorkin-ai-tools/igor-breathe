@@ -47,7 +47,7 @@ export function DurationStepper({
             cursor: "pointer",
           }}
         >
-          \u2212
+          −
         </button>
         <span
           style={{

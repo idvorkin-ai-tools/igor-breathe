@@ -30,7 +30,7 @@ export function PatternEditor({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={pattern.type === "box" ? "\u25fb New Box Pattern" : "\u25b3 New Trapezoid Pattern"}
+      title={pattern.type === "box" ? "◻ New Box Pattern" : "△ New Trapezoid Pattern"}
     >
       {/* Pattern Name */}
       <div style={{ marginBottom: 20 }}>

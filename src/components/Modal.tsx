@@ -21,7 +21,7 @@ export function Modal({ isOpen, onClose, title, children, maxWidth = 400 }: Moda
         <div className="modal-header">
           <h3 className="modal-title">{title}</h3>
           <button className="modal-close" onClick={onClose}>
-            \u00d7
+            ×
           </button>
         </div>
         <div className="modal-body">{children}</div>

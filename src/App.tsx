@@ -182,12 +182,12 @@ export default function BreathingShapes() {
             <button className="viz-picker-btn" onClick={() => setShowVizPicker(true)}>
               <span style={{ fontSize: 18 }}>{currentViz?.icon}</span>
               <span>{currentViz?.name}</span>
-              <span style={{ opacity: 0.5 }}>\u25bc</span>
+              <span style={{ opacity: 0.5 }}>▼</span>
             </button>
 
             {/* Active Pattern Display */}
             <div className="pattern-badge">
-              {activePattern.name} \u2022 {activePattern.durations.join("-")}
+              {activePattern.name} • {activePattern.durations.join("-")}
             </div>
 
             {/* Visualization */}
@@ -221,7 +221,7 @@ export default function BreathingShapes() {
               ) : (
                 <>
                   <button className="control-btn pause-btn" onClick={timer.togglePause}>
-                    {timer.isPaused ? "\u25b6" : "\u275a\u275a"}
+                    {timer.isPaused ? "▶" : "❚❚"}
                   </button>
                   <button className="control-btn stop-btn" onClick={stopSession}>
                     Stop
@@ -263,12 +263,12 @@ export default function BreathingShapes() {
             {/* Create New Pattern Buttons */}
             <div className="pattern-type-buttons">
               <button className="type-btn" onClick={() => openPatternEditor("box")}>
-                <div style={{ fontSize: 24, marginBottom: 8 }}>\u25fb</div>
+                <div style={{ fontSize: 24, marginBottom: 8 }}>◻</div>
                 <div style={{ fontWeight: 500 }}>New Box</div>
                 <div className="type-btn-desc">Equal sides</div>
               </button>
               <button className="type-btn" onClick={() => openPatternEditor("trapezoid")}>
-                <div style={{ fontSize: 24, marginBottom: 8 }}>\u25b3</div>
+                <div style={{ fontSize: 24, marginBottom: 8 }}>△</div>
                 <div style={{ fontWeight: 500 }}>New Trapezoid</div>
                 <div className="type-btn-desc">Custom timing</div>
               </button>
@@ -290,14 +290,14 @@ export default function BreathingShapes() {
                   >
                     <div className="pattern-card-header">
                       <span style={{ fontSize: 16 }}>
-                        {pattern.type === "box" ? "\u25fb" : "\u25b3"}
+                        {pattern.type === "box" ? "◻" : "△"}
                       </span>
                       <span style={{ fontWeight: 500 }}>{pattern.name}</span>
                     </div>
                     <div className="pattern-card-desc">
                       {pattern.type === "box"
                         ? `All sides: ${pattern.boxDuration || pattern.durations[0]}s`
-                        : `In ${pattern.durations[0]}s \u2022 Hold ${pattern.durations[1]}s \u2022 Out ${pattern.durations[2]}s \u2022 Hold ${pattern.durations[3]}s`}
+                        : `In ${pattern.durations[0]}s • Hold ${pattern.durations[1]}s • Out ${pattern.durations[2]}s • Hold ${pattern.durations[3]}s`}
                     </div>
                   </div>
                   <div className="pattern-card-actions">
