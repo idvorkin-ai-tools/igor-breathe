@@ -61,6 +61,17 @@ test:
 test-watch:
     npm run test:watch
 
+# Run e2e tests
+test-e2e:
+    npx playwright test
+
+# Run e2e tests with UI
+test-e2e-ui:
+    npx playwright test --ui
+
+# Run all tests (unit + e2e)
+test-all: test test-e2e
+
 # Generate PNG icons from SVG
 icons:
     npm run icons

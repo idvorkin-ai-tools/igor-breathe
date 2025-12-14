@@ -180,9 +180,9 @@ export default function BreathingShapes() {
           <div className="breathe-container">
             {/* Visualization Picker Button */}
             <button className="viz-picker-btn" onClick={() => setShowVizPicker(true)}>
-              <span style={{ fontSize: 18 }}>{currentViz?.icon}</span>
+              <span className="viz-picker-icon">{currentViz?.icon}</span>
               <span>{currentViz?.name}</span>
-              <span style={{ opacity: 0.5 }}>▼</span>
+              <span className="viz-picker-arrow">▼</span>
             </button>
 
             {/* Active Pattern Display */}
@@ -191,7 +191,7 @@ export default function BreathingShapes() {
             </div>
 
             {/* Visualization */}
-            <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+            <div className="viz-wrapper">
               {renderVisualization(visualization, {
                 phase: timer.currentPhase,
                 progress: timer.phaseProgress,
@@ -263,13 +263,13 @@ export default function BreathingShapes() {
             {/* Create New Pattern Buttons */}
             <div className="pattern-type-buttons">
               <button className="type-btn" onClick={() => openPatternEditor("box")}>
-                <div style={{ fontSize: 24, marginBottom: 8 }}>◻</div>
-                <div style={{ fontWeight: 500 }}>New Box</div>
+                <div className="type-btn-icon">◻</div>
+                <div className="type-btn-title">New Box</div>
                 <div className="type-btn-desc">Equal sides</div>
               </button>
               <button className="type-btn" onClick={() => openPatternEditor("trapezoid")}>
-                <div style={{ fontSize: 24, marginBottom: 8 }}>△</div>
-                <div style={{ fontWeight: 500 }}>New Trapezoid</div>
+                <div className="type-btn-icon">△</div>
+                <div className="type-btn-title">New Trapezoid</div>
                 <div className="type-btn-desc">Custom timing</div>
               </button>
             </div>
@@ -282,17 +282,17 @@ export default function BreathingShapes() {
                   className={`pattern-card ${activePatternId === pattern.id ? "active" : ""}`}
                 >
                   <div
+                    className="pattern-card-clickable"
                     onClick={() => {
                       setActivePatternId(pattern.id);
                       setActiveTab("breathe");
                     }}
-                    style={{ flex: 1, cursor: "pointer" }}
                   >
                     <div className="pattern-card-header">
-                      <span style={{ fontSize: 16 }}>
+                      <span className="pattern-type-icon">
                         {pattern.type === "box" ? "◻" : "△"}
                       </span>
-                      <span style={{ fontWeight: 500 }}>{pattern.name}</span>
+                      <span className="pattern-name">{pattern.name}</span>
                     </div>
                     <div className="pattern-card-desc">
                       {pattern.type === "box"
@@ -377,15 +377,14 @@ export default function BreathingShapes() {
 
               {/* Default Viz */}
               <div className="settings-card">
-                <div className="settings-label" style={{ marginBottom: 12 }}>
+                <div className="settings-label settings-label--spaced">
                   Default Visualization
                 </div>
                 <button
-                  className="viz-picker-btn"
-                  style={{ width: "100%", justifyContent: "center" }}
+                  className="viz-picker-btn viz-picker-btn--full"
                   onClick={() => setShowVizPicker(true)}
                 >
-                  <span style={{ fontSize: 18 }}>{currentViz?.icon}</span>
+                  <span className="viz-picker-icon">{currentViz?.icon}</span>
                   <span>{currentViz?.name}</span>
                 </button>
               </div>

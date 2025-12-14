@@ -82,7 +82,9 @@ button {
 .main {
   flex: 1;
   padding: 20px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tab-content {
@@ -123,6 +125,25 @@ button {
 .viz-picker-btn:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-active);
+}
+
+.viz-picker-btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+.viz-picker-icon {
+  font-size: 18px;
+}
+
+.viz-picker-arrow {
+  opacity: 0.5;
+}
+
+.viz-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .pattern-badge {
@@ -287,6 +308,15 @@ button {
   border-color: var(--border-active);
 }
 
+.type-btn-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.type-btn-title {
+  font-weight: 500;
+}
+
 .type-btn-desc {
   font-size: 11px;
   color: var(--text-dim);
@@ -315,11 +345,24 @@ button {
   border-color: var(--border-active);
 }
 
+.pattern-card-clickable {
+  flex: 1;
+  cursor: pointer;
+}
+
 .pattern-card-header {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 4px;
+}
+
+.pattern-type-icon {
+  font-size: 16px;
+}
+
+.pattern-name {
+  font-weight: 500;
 }
 
 .pattern-card-desc {
@@ -375,6 +418,10 @@ button {
 .settings-label {
   font-weight: 500;
   margin-bottom: 2px;
+}
+
+.settings-label--spaced {
+  margin-bottom: 12px;
 }
 
 .settings-desc {
