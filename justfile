@@ -43,19 +43,19 @@ generate-version:
 
 # Run the development server (generates version first)
 dev: generate-version
-    npm run dev
+    npm run dev-called-from-just
 
 # Build for production (generates version first)
 build: generate-version
-    npm run build
+    npm run build-called-from-just
 
 # Preview production build
 preview:
     npm run preview
 
-# Run unit tests
-test:
-    npm run test
+# Run unit tests (depends on build)
+test: build
+    npm run test-called-from-just
 
 # Run tests in watch mode
 test-watch:
